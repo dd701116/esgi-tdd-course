@@ -6303,7 +6303,13 @@ try {
 });
 
 const wordCounter = string => {
-  return string.split(' ').length;
+  if (typeof string !== 'string') {
+    throw new TypeError(`Expected string, got ${typeof string}`);
+  }
+
+  return string.split(/[\s|\W]+/).filter(str => {
+    return str !== '';
+  }).length;
 };
 
 const myFormat = winston.format.printf(info => {
