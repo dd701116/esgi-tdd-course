@@ -2,7 +2,7 @@ import '@babel/polyfill/noConflict';
 
 import program from 'commander';
 
-import wordCounter from './controllers/word-counter';
+import { sentenceWordCounter } from './controllers/word-counter';
 import logger from './helpers/logger';
 
 try {
@@ -12,7 +12,7 @@ try {
     .command('word-counter <string>')
     .description('Count number of words in a given string')
     .action(string => {
-      logger.info(`Your string has ${wordCounter(string)} word(s)`);
+      logger.info(`Your string has ${sentenceWordCounter(string)} word(s)`);
     });
 
   program.parse(process.argv);

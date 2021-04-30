@@ -1,4 +1,6 @@
-const wordCounter = string => {
+import fileReader from '../helpers/fileReader';
+
+export const sentenceWordCounter = string => {
   if (typeof string !== 'string') {
     throw new TypeError(`Expected string, got ${typeof string}`);
   }
@@ -8,4 +10,10 @@ const wordCounter = string => {
   }).length;
 };
 
-export default wordCounter;
+export const fileWordCounter = filePath => {
+  /*
+   * - Use fileReader to open file and read content
+   * - Use sentenceWordCounter above
+   * - Return value
+   */
+};

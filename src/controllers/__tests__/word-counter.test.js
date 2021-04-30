@@ -1,13 +1,13 @@
-import wordCounter from '../word-counter';
+import sentenceWordCounter from '../word-counter';
 
 describe('Test word-counter.js', () => {
-  describe('Tests on wordCounter function', () => {
+  describe('Tests on sentenceWordCounter function', () => {
     it('should return correct number in a Normal Case', () => {
       const condition1 = 'I Am A Full Sentence';
 
       const result = 5;
 
-      expect(wordCounter(condition1)).toEqual(result);
+      expect(sentenceWordCounter(condition1)).toEqual(result);
     });
 
     it('should return 0 when given an empty string', () => {
@@ -15,14 +15,14 @@ describe('Test word-counter.js', () => {
 
       const result = 0;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should throw error when given undefined', () => {
       const param = undefined;
 
       expect(() => {
-        wordCounter(param);
+        sentenceWordCounter(param);
       }).toThrow('Expected string, got undefined');
     });
 
@@ -31,7 +31,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return 1 when given 1 word without space', () => {
@@ -39,7 +39,7 @@ describe('Test word-counter.js', () => {
 
       const result = 1;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return 1 when no space between words', () => {
@@ -47,7 +47,7 @@ describe('Test word-counter.js', () => {
 
       const result = 1;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return correct number of word when the given string starts with a space', () => {
@@ -55,7 +55,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return correct number of word when the given string ends with a space', () => {
@@ -63,7 +63,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return correct number of word when the given string ends and starts with a space', () => {
@@ -71,7 +71,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return correct number of word when given more than 1 space in a row', () => {
@@ -79,7 +79,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return 1 for a composed word', () => {
@@ -87,7 +87,7 @@ describe('Test word-counter.js', () => {
 
       const result = 2;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
 
     it('should return 0 for only punctuations', () => {
@@ -95,7 +95,7 @@ describe('Test word-counter.js', () => {
 
       const result = 0;
 
-      expect(wordCounter(param)).toEqual(result);
+      expect(sentenceWordCounter(param)).toEqual(result);
     });
   });
 });
